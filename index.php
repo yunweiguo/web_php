@@ -64,8 +64,8 @@ if ($_GET[delete]) {
                         <table class="table table-striped table-bordered table-hover" width="70%" >
                             <tr align="center">
                                 <th>姓名</th>
-                                <th>学号</th>
                                 <th>性别</th>
+                                <th>学号</th>
                                 <th>班级</th>
                                 <th>地址</th>
                                 <th></th>
@@ -75,8 +75,8 @@ if ($_GET[delete]) {
                                 ?>
                                 <tr>
                                     <td class="name"><?php echo $student['1'] ?></td>
-                                    <td class="no"><?php echo $student['2'] ?></td>
-                                    <td class="sex"><?php echo $student['3'] ?></td>
+                                    <td class="sex"><?php echo $student['2'] ?></td>
+                                    <td class="no"><?php echo $student['3'] ?></td>
                                     <td class="class"><?php echo $student['4'] ?></td>
                                     <td class="address"><?php echo $student['5'] ?></td>
                                     <td>
