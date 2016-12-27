@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `test_db`
 --
-
+CREATE DATABASE `test_db`;
+use `test_db`;
 -- --------------------------------------------------------
 
 --
@@ -27,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `student` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL primary key,
   `name` varchar(20) NOT NULL,
   `sex` varchar(2) NOT NULL,
   `no` varchar(20) NOT NULL,
