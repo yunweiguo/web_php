@@ -87,11 +87,11 @@ if ($_POST[submit]) {
                                 </div>
                                 <div class="form-group">
                                     <label>班级</label>
-                                    <input class="form-control" placeholder="输入姓名" type="text" name="class">
+                                    <input class="form-control" placeholder="输入班级" type="text" name="class">
                                 </div>
                                 <div class="form-group">
                                     <label>家庭地址</label>
-                                    <input class="form-control" placeholder="输入姓名" type="text" name="address">
+                                    <input class="form-control" placeholder="输入家庭地址" type="text" name="address">
                                 </div>
                                 <input type="submit" name="submit" value="Submit"
                                        class="btn btn-lg btn-success btn-block">
