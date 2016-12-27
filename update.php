@@ -100,7 +100,7 @@ mysql_close($db);
                                 <input class="form-control" placeholder="输入家庭地址" type="text" name="address"
                                        value="<?php echo $student['5']; ?>">
                             </div>
-                            <input type="submit" name="submit" value="Submit" class="btn btn-lg btn-success btn-block">
+                            <input type="submit" name="submit" value="提交更新" class="btn btn-lg btn-success btn-block">
                         </form>
                     </div>
                 </div>

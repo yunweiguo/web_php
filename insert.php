@@ -93,7 +93,7 @@ if ($_POST[submit]) {
                                     <label>家庭地址</label>
                                     <input class="form-control" placeholder="输入家庭地址" type="text" name="address">
                                 </div>
-                                <input type="submit" name="submit" value="Submit"
+                                <input type="submit" name="submit" value="新增学生"
                                        class="btn btn-lg btn-success btn-block">
                             </form>
                         </div>
