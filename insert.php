@@ -3,10 +3,30 @@
 
 <head>
     <meta charset="utf-8">
-    <title>学生信息系统</title>
-    <style>
-        .error {color: #FF0000;}
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>学生信息管理系统</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="./vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="./vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="./vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <?php
@@ -17,8 +37,8 @@
  * Time: 下午5:01
  */
 error_reporting(0);
-if ($_POST[submit]){
-    $db = mysql_connect("localhost","root");
+if ($_POST[submit]) {
+    $db = mysql_connect("localhost", "root");
     if (!$db) {
         die("Connection failed: " . mysqli_connect_error());
     }
@@ -27,31 +47,90 @@ if ($_POST[submit]){
     $sql = "INSERT INTO student (name, sex, no, class, address) VALUES ('$_POST[name]', 
             '$_POST[sex]', '$_POST[no]', '$_POST[class]', '$_POST[address]')";
     $result = mysql_query($sql, $db);
-    if ($result){
-        header("Location: http://127.0.0.1/show.php");
-    }else{
+    if ($result) {
+        header("Location: ./index.php");
+    } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($db);
     }
 
     mysql_close($db);
-}else{
+} else {
     ?>
-
-    <h2>添加新的学生</h2>
-    <form method="post" action="<?php echo $_SERVER["SCRIPT_NAME"]?>">
-        名字:<input type="text" name="name" value=""><br><br>
-        性别:<input type="radio" name="sex" value="女">女
-        <input type="radio" name="sex" value="男">男<br><br>
-        学号:<input type="text" name="no" value=""><br><br>
-        班级:<input type="text" name="class" value=""><br><br>
-        家庭地址: <input type="text" name="address" value=""><br><br>
-
-        <input type="submit" name="submit" value="Submit">
-    </form>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 align="center">添加新的学生</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form method="post" role="form" action="<?php echo $_SERVER["SCRIPT_NAME"] ?>">
+                                <div class="form-group">
+                                    <label>姓名</label>
+                                    <input class="form-control" placeholder="输入姓名" type="text" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label>性别</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" id="optionsRadiosInline1"
+                                               value="女">女
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" id="optionsRadiosInline2"
+                                               value="男">男
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label>学号</label>
+                                    <input class="form-control" placeholder="输入学号" type="text" name="no">
+                                </div>
+                                <div class="form-group">
+                                    <label>班级</label>
+                                    <input class="form-control" placeholder="输入班级" type="text" name="class">
+                                </div>
+                                <div class="form-group">
+                                    <label>家庭地址</label>
+                                    <input class="form-control" placeholder="输入家庭地址" type="text" name="address">
+                                </div>
+                                <input type="submit" name="submit" value="新增学生"
+                                       class="btn btn-lg btn-success btn-block">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php
 }
 ?>
 
-</body>
-</html>
+<!-- jQuery -->
+<script src="./vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="./vendor/metisMenu/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../dist/js/sb-admin-2.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </
+    body >
+    < / html >
 
